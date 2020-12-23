@@ -22,17 +22,17 @@
 			<td>Action</td>
 		</tr>
 
-		@for($i=0; $i < count($users); $i++)
+		@for($i=0; $i < count($employees); $i++)
 		<tr>
-			<td>{{$users[$i]['id']}}</td>
-			<td>{{$users[$i]['username']}}</td>
-			<td>{{$users[$i]['name']}}</td>
-			<td>{{$users[$i]['company_name']}}</td>
-			<td>{{$users[$i]['contact_number']}}</td>
+			<td>{{$employees[$i]['id']}}</td>
+			<td>{{$employees[$i]['username']}}</td>
+			<td>{{$employees[$i]['name']}}</td>
+			<td>{{$employees[$i]['company_name']}}</td>
+			<td>{{$employees[$i]['contact_number']}}</td>
 			<td>
-				<a href="/details/{{$users[$i]['userId']}}">Details</a> |
-				<a href="{{route('home.edit', $users[$i]['userId'])}}">Edit</a> |
-				<a href="/delete/{{$users[$i]['userId']}}">Delete</a> 
+				<a href="/details/{{$employees[$i]['id']}}">Details</a> |
+				<a href="{{route('home.edit', $employees[$i]['id'])}}">Edit</a> |
+				<a href="/delete/{{$employees[$i]['id']}}">Delete</a> 
 			</td>
 		</tr>
 		@endfor
