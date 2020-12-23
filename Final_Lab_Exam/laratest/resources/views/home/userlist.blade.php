@@ -26,7 +26,10 @@
                 data: {text: $('#txtSearch').val()},
                 success: function(data) {
 
-                    console.log(data);
+					data = JSON.parse(data);
+					for (var employee of data) {
+						console.log(employee);
+					}
                  }
             });
 

@@ -20,7 +20,6 @@ Route::get('/login', 'loginController@index');
 Route::post('/login', 'loginController@verify');
 Route::get('/logout', 'logoutController@index');
 
-
 Route::group(['middleware'=>['sess']], function(){
 
 	Route::get('/home', 'homeController@index')->middleware('sess')->name('home.index');
@@ -28,6 +27,7 @@ Route::group(['middleware'=>['sess']], function(){
 	Route::get('/userlist', ['uses'=> 'homeController@userlist', 'as'=>'home.userlist']);
 	Route::get('/jobList', ['uses'=> 'homeController@jobList', 'as'=>'home.jobList']);
 	Route::get('/details/{id}', 'homeController@show');
+	Route::get('/search', 'homeController@search');
 
 
 	Route::group(['middleware'=>['type']], function(){
