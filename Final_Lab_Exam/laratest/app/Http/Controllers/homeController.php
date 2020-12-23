@@ -7,6 +7,7 @@ use App\Http\Requests\UserRequest;
 use Validator;
 use App\User;
 use App\Employee;
+use App\Job;
 
 class homeController extends Controller
 {
@@ -28,6 +29,10 @@ class homeController extends Controller
         return view('home.create');
     }
 
+    public function createJob(){
+        return view('home.createJob');
+    }
+
     public function store(UserRequest $req){
         
         $employee = new Employee();
@@ -46,6 +51,15 @@ class homeController extends Controller
     public function userlist(){
         $employees  = Employee::all();
         return view('home.userlist')->with('employees', $employees);
+    }
+    public function jobList(){
+        $jobs  = Job::all();
+        return view('home.jobList')->with('jobs', $jobs);
+    }
+
+    public function show($id){
+        $employee = Employee::find($id);   
+        return view('home.show', $employee);
     }
 
     public function edit($id){
