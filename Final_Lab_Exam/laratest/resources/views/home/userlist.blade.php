@@ -22,7 +22,7 @@
             $.ajax({
 
                 type:"GET",
-                url: '127.0.0.1:3000/search',
+                url: '/search',
                 data: {text: $('#txtSearch').val()},
                 success: function(data) {
 
