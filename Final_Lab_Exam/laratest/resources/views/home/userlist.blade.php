@@ -10,7 +10,35 @@
 	<a href="/logout">logout</a>
 
 	<br>
+	<hr>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="application/javascript">
+    $(document).ready(function(){
+
+        $('#txtSearch').on('keyup', function(){
+
+            var text = $('#txtSearch').val();
+
+            $.ajax({
+
+                type:"GET",
+                url: '127.0.0.1:3000/search',
+                data: {text: $('#txtSearch').val()},
+                success: function(data) {
+
+                    console.log(data);
+                 }
+            });
+
+
+        });
+
+    });
+    </script>
+    <input type="text" id="txtSearch" name="txtSearch" class="form-control"  placeholder="Search..." >
+    <input type="submit" name="search" value="Search">
 	<br>
+    <br>
 
 	<table border="1">
 		<tr>

@@ -8,10 +8,8 @@
 	<h3>All Jobs</h3>
 	<a href="{{route('home.index')}}">Back</a> |
 	<a href="/logout">logout</a>
-
-	<br>
-	<br>
-
+    <br>
+    <br>
 	<table border="1">
 		<tr>
 			<td>ID</td>

@@ -67,6 +67,7 @@ class homeController extends Controller
         return view('home.edit', $employee);
     }
 
+
     public function update($id, Request $req){
 
         $employee = Employee::find($id); 
@@ -88,5 +89,12 @@ class homeController extends Controller
     public function destroy($id){
         //$user = $id
         //return view('home.show')->with('user', $user);
+    }
+
+    public function search(Request $request) {
+        
+        $text = $request->input('text');
+        $employees = Employee::table('employees')->where('username', 'Like', $text)->get();
+        return response()->json($employees);
     }
 }
